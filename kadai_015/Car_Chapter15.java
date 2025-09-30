@@ -4,9 +4,9 @@ public class Car_Chapter15 {
 //フィールド（ギアを定義）
 //フィールド（速度を定義）
 //変数を宣言
-int gear; //ギア
-int speed; //スピード
-int afterGear; //ギアチェンジ後のギア
+private int gear; //ギア
+private int speed; //スピード
+
 //get
 private int getGear() {
 	return gear;
@@ -32,14 +32,7 @@ private void setSpeed() {
 }
 //メソッド（ギア変更）
 public void changeGear(int afterGear) {
-	switch(afterGear) {
-		case 1 -> this.speed = 10;
-		case 2 -> this.speed = 20;
-		case 3 -> this.speed = 30;
-		case 4 -> this.speed = 40;
-		case 5 -> this.speed = 50;
-		default ->this.speed = 10;
-	};
+	getSpeed(afterGear);
 System.out.println("ギア"+gear+"から"+afterGear+"に切り替えました");
 };
 //メソッド(ギアチェンジ後の速度を表示)
