@@ -3,16 +3,14 @@ package kadai_015;
 public class Car_Chapter15 {
 //フィールド（ギアを定義）
 //フィールド（速度を定義）
-//変数を宣言
-private int gear; //ギア
-private int speed; //スピード
+//初期値を宣言
+private int gear= 1; //ギア1
+private int speed= 10; //スピード10km/h
 
-//get
-private int getGear() {
-	return gear;
-}	
-private int getSpeed(int gear) {
-	//初期ギアによって速度決定
+//メソッド（ギア変更）
+public void changeGear(int afterGear) {
+	System.out.println("ギア"+gear+"から"+afterGear+"に切り替えました");
+	gear = afterGear;//ギアの値の更新
 	switch(gear) {
 	case 1 -> speed = 10;
 	case 2 -> speed = 20;
@@ -21,30 +19,13 @@ private int getSpeed(int gear) {
 	case 5 -> speed = 50;
 	default -> speed = 10;
 };
-	return speed;
-}
-//set
-private void setGear() {
-	this.gear =gear;
-}	
-private void setSpeed() {
-	this.speed=speed;
-}
-//メソッド（ギア変更）
-public void changeGear(int afterGear) {
-	getSpeed(afterGear);
-System.out.println("ギア"+gear+"から"+afterGear+"に切り替えました");
+
 };
 //メソッド(ギアチェンジ後の速度を表示)
 public void run() {
-	 System.out.println("速度は時速"+speed +"kmです");
-}
+	System.out.println("速度は時速"+speed +"kmです");
 
-//コンストラクタ
-Car_Chapter15(int gear){
-	this.gear = gear;
 }
 
 
-	
 }
